@@ -1,0 +1,13 @@
+# OSX-specific
+.DS_Store
+
+# IDE settings
+.idea/
+
+# Environment variables
+.env*
+!.env.template
+
+# Code
+AGENTS.md
+CLAUDE.md

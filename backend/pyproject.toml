@@ -1,0 +1,49 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "sme_zh_auto_quote"
+description = "Automatic quote generation for SMEs"
+requires-python = "~=3.14.0"
+dependencies = [
+    "chromadb~=1.5.9",
+    "fastapi~=0.162.0",
+    "loguru~=0.7.3",
+    "openai~=3.40.0",
+    "openpyxl~=3.1.5",
+    "pydantic~=2.14.1",
+    "pypdf~=6.21.4",
+    "python-docx~=1.2.0",
+    "python-dotenv~=1.2.4",
+    "python-multipart~=0.0.32",
+    "reportlab~=5.1.0",
+    "uvicorn~=0.54.0",
+]
+dynamic = ["version"]
+
+[dependency-groups]
+dev = [
+    "ipykernel~=7.4.0",
+    "pre-commit~=4.7.0",
+    "ruff~=0.16.10",
+]
+
+[tool.hatch.version]
+path = "src/auto_quote/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/auto_quote"]
+
+[tool.ruff]
+target-version = "py314"
+line-length = 140
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "B", "I", "RUF1", "UP", "W"]
+
+[tool.ruff.lint.isort]
+lines-after-imports = 2
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]

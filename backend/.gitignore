@@ -1,0 +1,25 @@
+# Python cache
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+*.egg-info/
+
+# Virtual environment
+.venv/
+
+# Secrets
+.env*
+!.env.template
+
+# Data and notebooks, kept out of version control
+example/
+data/*
+!data/.gitkeep
+notebooks/*
+!notebooks/.gitkeep
+
+# IDE settings
+.idea/
+
+# OSX-specific
+.DS_Store

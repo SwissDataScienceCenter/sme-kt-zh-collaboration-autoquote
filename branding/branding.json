@@ -1,0 +1,10 @@
+{
+    "name": "Auto Quote",
+    "description": "Automatic quote generation for SMEs",
+    "details": "",
+    "logoAlt": "Swiss Data Science Center",
+    "colors": {
+        "primary": "#5561a6",
+        "ink": "#26235c"
+    }
+}

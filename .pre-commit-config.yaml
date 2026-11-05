@@ -1,0 +1,49 @@
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v6.0.0
+  hooks:
+  - id: check-added-large-files
+    args: ["--maxkb=2000"]
+  - id: check-case-conflict
+  - id: check-illegal-windows-names
+  - id: check-json
+    # tsconfig.json is JSONC (comments allowed)
+    exclude: ^frontend/tsconfig\.json$
+  - id: check-merge-conflict
+  - id: check-symlinks
+  - id: check-toml
+  - id: check-xml
+  - id: check-yaml
+  - id: destroyed-symlinks
+  - id: end-of-file-fixer
+  - id: trailing-whitespace
+- repo: https://github.com/kynan/nbstripout
+  rev: 0.9.1
+  hooks:
+  - id: nbstripout
+    args: ["--drop-empty-cells", "--keep-id", "--extra-keys=metadata.kernelspec metadata.language_info.version"]
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  rev: v0.16.10
+  hooks:
+    - id: ruff-check
+      args: [ --fix ]
+      files: ^backend/
+    - id: ruff-format
+      files: ^backend/
+- repo: https://github.com/astral-sh/uv-pre-commit
+  rev: 0.12.21
+  hooks:
+    - id: uv-lock
+      args: ["--project=backend"]
+      files: ^backend/(uv\.lock|pyproject\.toml)$
+    - id: uv-export
+      args: ["--project=backend", "--frozen", "--no-dev", "--no-emit-project", "--output-file=backend/requirements.txt", "--quiet"]
+      files: ^backend/uv\.lock$
+- repo: local
+  hooks:
+    - id: frontend-format
+      name: frontend format (eslint + prettier)
+      entry: npm --prefix frontend run format
+      language: system
+      files: ^frontend/
+      pass_filenames: false

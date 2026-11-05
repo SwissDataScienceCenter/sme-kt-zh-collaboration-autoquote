@@ -1,0 +1,27 @@
+class ApiPaths:
+    API = "/api/v1"
+
+    EXTRACTION_CONFIGURATION = f"{API}/extraction-configuration"
+    EXTRACTION_CONFIGURATION_PREVIEW = f"{EXTRACTION_CONFIGURATION}/preview"
+    EXTRACTION_CONFIGURATION_IMPORT = f"{EXTRACTION_CONFIGURATION}/import"
+    EXTRACTION_CONFIGURATION_EXPORT = f"{EXTRACTION_CONFIGURATION}/export"
+
+    FOLLOW_UP_CONFIGURATION = f"{API}/follow-up-configuration"
+    FOLLOW_UP_CONFIGURATION_RESET = f"{FOLLOW_UP_CONFIGURATION}/reset"
+    FOLLOW_UP_CONFIGURATION_PREVIEW = f"{FOLLOW_UP_CONFIGURATION}/preview"
+
+    QUOTE_CONFIGURATION = f"{API}/quote-configuration"
+    QUOTE_CONFIGURATION_RESET = f"{QUOTE_CONFIGURATION}/reset"
+    QUOTE_CONFIGURATION_PREVIEW = f"{QUOTE_CONFIGURATION}/preview"
+
+    EXTRACTIONS = f"{API}/extractions"
+    EXTRACTION = f"{EXTRACTIONS}/{{extraction_id}}"
+    QUOTE_ADJUSTMENTS = f"{EXTRACTION}/quote-adjustments"
+    EXTRACTION_QUOTE_PDF = f"{EXTRACTION}/quote.pdf"
+
+    DOCUMENTS = f"{API}/documents"
+    DOCUMENT_INDEX = f"{DOCUMENTS}/index"
+    DOCUMENT_FILE = f"{DOCUMENTS}/files/{{file_name}}"
+
+    PRODUCTS = f"{API}/products"
+    PRODUCT = f"{PRODUCTS}/{{product_id}}"

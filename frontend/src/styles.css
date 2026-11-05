@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap");
+@import url("https://api.fontshare.com/v2/css?f[]=switzer@400,500,600&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* There is no dark theme: this keeps the generated components' dark: classes off instead of following the OS setting. */
+@custom-variant dark (&:is(.dark *));
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+@theme inline {
+    --font-heading: "Space Grotesk", system-ui, sans-serif;
+    --font-sans: "Switzer", system-ui, sans-serif;
+    --font-mono: "Fira Code", ui-monospace, monospace;
+    --color-ink: var(--ink);
+    --color-surface: var(--surface);
+    --color-highlight: var(--highlight);
+    --color-warning: var(--warning);
+    --color-warning-foreground: var(--warning-foreground);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* SDSC design system: lavender-grey background, 4px radius. The brand colours (--primary, --ink) come from branding/branding.json. */
+:root {
+    --background: #f4f3f8;
+    --foreground: #000000;
+    --card: #ffffff;
+    --card-foreground: #000000;
+    --popover: #ffffff;
+    --popover-foreground: #000000;
+    --primary-foreground: #ffffff;
+    --secondary: #f0f0f6;
+    --secondary-foreground: var(--ink);
+    --muted: #f0f0f6;
+    --muted-foreground: #525252;
+    --accent: #f0f0f6;
+    --accent-foreground: var(--ink);
+    --destructive: #dc2626;
+    --border: #e5e5e5;
+    --input: #c9c9c9;
+    --ring: var(--primary);
+    --surface: #f0f0f6;
+    --highlight: #dddeec;
+    --warning: #f59e0b;
+    --warning-foreground: #000000;
+    --radius: 0.25rem;
+}
+
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+    html {
+        @apply font-sans antialiased;
+    }
+    h1,
+    h2,
+    h3 {
+        @apply font-heading font-medium tracking-[-0.02em] text-ink;
+    }
+}
+
+@layer components {
+    .page-container {
+        @apply mx-auto w-full max-w-[1360px] px-4 sm:px-10;
+    }
+}
