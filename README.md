@@ -26,7 +26,7 @@ and the ERP item master, and applies the calculation guideline and rules of thum
 and it depends on a few people.
 
 Auto Quote shows how much of this an AI pipeline can take over, using the company's own documents: datasheets, price lists and past
-offers. The synthetic Fronalp dataset lives in its own repository: (Coming Soon).
+offers. The synthetic Fronalp dataset lives in its [own repository.](https://github.com/SwissDataScienceCenter/sme-kt-zh-collaboration-rfq-dataset.git)
 
 **Example.** A property manager writes:
 

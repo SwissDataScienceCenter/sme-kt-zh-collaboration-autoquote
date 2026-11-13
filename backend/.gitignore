@@ -11,12 +11,13 @@ __pycache__/
 .env*
 !.env.template
 
-# Data and notebooks, kept out of version control
+# App data kept out of version control; notebooks and their sample data are tracked
 example/
 data/*
 !data/.gitkeep
 notebooks/*
-!notebooks/.gitkeep
+!notebooks/*.ipynb
+!notebooks/data/
 
 # IDE settings
 .idea/
